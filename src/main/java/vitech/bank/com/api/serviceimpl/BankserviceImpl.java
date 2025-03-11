@@ -1,4 +1,4 @@
-package vitech.bank.com.api.serviceIMPL;
+package vitech.bank.com.api.serviceimpl;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import vitech.bank.com.api.model.Bankmodel;
 import vitech.bank.com.api.service.Bankservice;
 
 @Service
-public class BankserviceIMPL implements Bankservice {
+public class BankserviceImpl implements Bankservice {
 
 	@Autowired
 	public BankRepo bankrepo;
@@ -115,7 +115,7 @@ public class BankserviceIMPL implements Bankservice {
 	public String atmPin(String accountNumber, String bankName, Integer atmPin) {
 		 Optional<Bankmodel> bankDbResponse = bankrepo.findByAccountNumberAndBankName(accountNumber, bankName);
 		 if (bankDbResponse.isEmpty()) {
-			 return "accountNumber + ":"does not exist enter valid details";
+			 return accountNumber + "does not exist enter valid details";
 		 } else {
 		       if(bankDbResponse.get().getAtmPin() == atmPin ) {
 		    	   return "your account balance is -"+ bankDbResponse.get().getDepositeAmount();
