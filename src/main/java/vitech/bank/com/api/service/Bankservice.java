@@ -13,7 +13,7 @@ public interface Bankservice  {
 		String depositAmount(String accountNumber, String bankName, Float depositAmount);
 
 
-		String withdrawAmount(String accountNumber, String bankName, Float depositAmount);
+		String withdrawAmount(String accountNumber, String bankName, Float withdrawAmount);
 
 
 		String atmPin(String accountNumber, String bankName, Integer atmPin);

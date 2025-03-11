@@ -33,17 +33,6 @@ public class BankserviceImpl implements Bankservice {
 	    bankrepo.save(bank);
 	    return "Customer details saved successfully. Account number: " + bank.getAccountNumber();
 	}
-
-//	@Override
-//	public String depositAmount(Bankmodel bank) {
-//		Optional<Bankmodel> existingBank = java.util.Optional.empty();
-//		
-//		Bankmodel bankValues = existingBank.get();
-//    	Float depositeAmountOld = bankValues.getDepositeAmount() ;
-//        Float dipositeAmmountNew = bankValues.getDepositeAmount();
-//    	bank.setDepositeAmount(depositeAmountOld + dipositeAmmountNew);
-//        return "Amount deposit successfully done for the Account Number " + bank.getAccountNumber();
-//    }
 	@Override
     public String depositAmount(String accountNumber, String bankName, Float depositAmount) {
         // Fetch the account using accountNumber and bankName
